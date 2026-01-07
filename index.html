@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStart Solutions | Zero-Cost IT Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+    --primary: #6366f1;
+    --secondary: #10b981;
+    --accent: #f59e0b;
+    --light: #f8fafc;
+    --dark: #1e293b;
+    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+.navbar {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Navbar shrink effect on scroll */
+.navbar.scrolled {
+    padding: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Brand Logo / Text */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    color: white !important;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Stylish underline hover effect */
+.navbar-brand::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: rgba(255,255,255,0.7);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.4s ease;
+}
+
+.navbar-brand:hover::after {
+    width: 100%;
+}
+
+/* Nav links */
+.nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover underline animation for links */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: white;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 60%;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+/* Active link styling */
+.nav-link.active {
+    color: white !important;
+    font-weight: 600;
+}
+
+           .logo {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    border-radius: 10px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2), 0 0 12px rgba(255,255,255,0.15);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Glow + Lift Effect */
+.logo:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 18px rgba(255,255,255,0.25);
+}
+
+/* Light moving highlight effect */
+.logo::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10px;
+    left: -10px;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+/* Hover shine effect */
+.logo:hover::after {
+    left: 60px;
+    top: 60px;
+}
+
+            .hero {
+    background: linear-gradient(135deg, rgba(106, 17, 203, 0.85), rgba(37, 117, 252, 0.85));
+    color: #fff;
+    padding: 170px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.hero h1 {
+    font-size: 3rem; /* keep your text size */
+    font-weight: 800;
+    text-transform: none;
+    background: linear-gradient(270deg,
+        #ff5f6d, /* soft red-pink */
+        #ffc371, /* warm orange */
+        #47fced, /* cyan */
+        #1a73e8, /* blue */
+        #8e44ad, /* purple */
+        #ff5f6d /* loop back to red */);
+    background-size: 1200% 1200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowText 6s linear infinite;
+    display: inline-block;
+}
+
+@keyframes rainbowText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Light floating bubbles animation */
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.hero::before {
+    top: -50px;
+    left: -80px;
+}
+
+.hero::after {
+    bottom: -80px;
+    right: -50px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(20px) scale(1.05); }
+    100% { transform: translateY(0px) scale(1); }
+}
+
+       .service-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    border: none;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-1);
+}
+
+.service-card:nth-child(2)::before {
+    background: var(--gradient-2);
+}
+
+.service-card:nth-child(3)::before {
+    background: var(--gradient-3);
+}
+
+.service-card:nth-child(4)::before {
+    background: var(--gradient-4);
+}
+
+.service-card:nth-child(5)::before {
+    background: var(--gradient-5);
+}
+
+.service-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Portfolio Section */
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.portfolio-item {
+    background: var(--light);
+    padding: 160px 160px;
+    border-radius: 12px;
+    width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    }
+
+.service-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tech-badge {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.client-testimonial {
+    border-left: 3px solid #667eea;
+}
+        .contact-info {
+    background: var(--gradient-1);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    color: white;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+}
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+             gap: 12px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+
+.service-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tech-badge {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.client-testimonial {
+    border-left: 3px solid #ffc107;
+}
+
+.quick-stats .stat-item {
+    flex: 1;
+}
+
+.badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+}
+
+
+
+.service-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.bg-gradient-success {
+     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tech-badge {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.client-testimonial {
+    border-left: 3px solid #28a745;
+}
+
+.quick-stats .stat-item {
+    flex: 1;
+}
+
+.badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+}
+
+
+
+.service-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.bg-gradient-info {
+     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tech-badge {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.client-testimonial {
+    border-left: 3px solid #17a2b8;
+}
+
+.quick-stats .stat-item {
+    flex: 1;
+}
+
+.badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+}
+
+.social-links a:has(.fa-envelope),
+.social-links a:has(.fa-github) {
+    margin-top: 10px;
+}
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        footer {
+    background: var(--dark);
+    color: white;
+    padding: 4rem 0 2rem;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+        .btn-primary {
+            background-color: var(--secondary);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tech-badge {
+    display: inline-block;
+    background: var(--gradient-1);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    margin: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <div class="logo">TS</div>
+            TechStart Solutions
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Professional IT Solutions Without The Cost Barrier</h1>
+        <p class="lead mb-4">Data Analysis • Web Development • Power BI • AI Automation • Free Training Resources</p>
+        <a href="#services" class="btn btn-light btn-lg">Explore Services</a>
+    </div>
+</section>
+
+
+<!-- Services Section -->
+<section id="services" class="py-5">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="row g-4">
+            <!-- Service 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4 class="card-title">Data Analysis & Business Insights</h4>
+                        <p class="card-text">Transform your raw data into actionable insights using Excel, Power BI, and
+                            custom dashboards.</p>
+                        <div class="mt-3">
+                            <span class="tech-badge">Excel</span>
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">Dashboard</span>
+                            <span class="tech-badge">Business Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4 class="card-title">Website Development</h4>
+                        <p class="card-text">Professional websites built with free tools and technologies. Responsive,
+                            fast, and user-friendly.</p>
+                        <div class="mt-3">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="card-title">Power BI Freelancer</h4>
+                        <p class="card-text">Custom Power BI reports and dashboards tailored to your business needs and
+                            KPIs.</p>
+                        <div class="mt-3">
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">Data Visualization</span>
+                            <span class="tech-badge">Reports</span>
+                            <span class="tech-badge">KPIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4 class="card-title">Free Course PDFs</h4>
+                        <p class="card-text">Access our collection of free educational PDFs and digital products to
+                            enhance your skills.</p>
+                        <div class="mt-3">
+                            <span class="tech-badge">PDF Resources</span>
+                            <span class="tech-badge">Tutorials</span>
+                            <span class="tech-badge">Learning Materials</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4 class="card-title">AI Automation</h4>
+                        <p class="card-text">Implement AI-powered automation solutions to streamline your business
+                            processes at zero cost.</p>
+                        <div class="mt-3">
+                            <span class="tech-badge">AI Integration</span>
+                            <span class="tech-badge">Process Automation</span>
+                            <span class="tech-badge">Chatbots</span>
+                            <span class="tech-badge">Workflow Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 6 - Free Consultation -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-card bg-primary text-white">
+                    <div class="card-body p-4 text-center">
+                        <div class="service-icon text-white">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="card-title">Free Consultation</h4>
+                        <p class="card-text">Not sure which service you need? Book a free consultation to discuss your
+                            requirements.</p>
+                        <a href="#contact" class="btn btn-light mt-3">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="Project" class="py-5">
+    <div class="container">
+        <h2 class="section-title">Our Project</h2>
+
+        <div class="row g-4">
+
+
+            <!-- Project 1 - Premium Data Analysis Service -->
+<div class="col-md-6 col-lg-4">
+    <div class="card service-card border-0 shadow-lg h-100 hover-lift">
+        <!-- Card Header with Gradient -->
+        <div class="card-header bg-gradient-info text-white text-center py-3 border-0">
+            <i class="fas fa-chart-bar fa-2x mb-2"></i>
+            <h5 class="card-title mb-0">Data Analysis & Business Insights</h5>
+        </div>
+
+        <div class="card-body p-4 d-flex flex-column">
+            <!-- Benefits List -->
+            <ul class="list-unstyled mb-4 flex-grow-1">
+                <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-database text-info mt-1 me-3"></i>
+                    <div>
+                        <strong>Data Cleaning & Transformation</strong>
+                        <p class="small text-muted mb-0">Clean messy data and transform it into analysis-ready format</p>
+                    </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-tachometer-alt text-success mt-1 me-3"></i>
+                    <div>
+                        <strong>Interactive Dashboards</strong>
+                        <p class="small text-muted mb-0">Real-time dashboards for sales, marketing & finance tracking</p>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start">
+                    <i class="fas fa-lightbulb text-warning mt-1 me-3"></i>
+                    <div>
+                        <strong>Actionable Insights</strong>
+                        <p class="small text-muted mb-0">Get clear recommendations to grow your business</p>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Client Testimonial -->
+            <div class="client-testimonial bg-light rounded p-3 mb-3">
+                <p class="small text-muted mb-2">
+                    <i class="fas fa-quote-left text-info me-1"></i>
+                    "Our sales increased by 40% after implementing their data insights!"
+                </p>
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-user-circle text-secondary me-2"></i>
+                    <small class="text-muted">- Retail Business Owner</small>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="quick-stats d-flex justify-content-between text-center mb-3">
+                <div class="stat-item">
+                    <div class="h5 mb-0 text-info">100+</div>
+                    <small class="text-muted">Reports</small>
+                </div>
+                <div class="stat-item">
+                    <div class="h5 mb-0 text-success">60%</div>
+                    <small class="text-muted">Cost Saved</small>
+                </div>
+                <div class="stat-item">
+                    <div class="h5 mb-0 text-warning">₹0</div>
+                    <small class="text-muted">Investment</small>
+                </div>
+            </div>
+
+            <!-- Technology Badges -->
+            <div class="tech-badges mb-3 text-center">
+                <span class="badge bg-info me-1 mb-1">Excel Pro</span>
+                <span class="badge bg-success me-1 mb-1">Power BI</span>
+                <span class="badge bg-primary me-1 mb-1">Dashboard</span>
+                <span class="badge bg-warning me-1 mb-1">Business Analysis</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-grid gap-2">
+                <button class="btn btn-info text-white">
+                    <i class="fas fa-chart-line me-2"></i>View Sample Reports
+                </button>
+                <button class="btn btn-outline-info btn-sm">
+                    <i class="fas fa-calculator me-2"></i>Free Data Audit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <!-- Project 2 - Premium Website Development Service -->
+<div class="col-md-6 col-lg-4">
+    <div class="card service-card border-0 shadow-lg h-100 hover-lift">
+        <!-- Card Header with Gradient -->
+        <div class="card-header bg-gradient-success text-white text-center py-3 border-0">
+            <i class="fas fa-code fa-2x mb-2"></i>
+            <h5 class="card-title mb-0">Website Development</h5>
+        </div>
+
+        <div class="card-body p-4 d-flex flex-column">
+            <!-- Benefits List -->
+            <ul class="list-unstyled mb-4 flex-grow-1">
+                <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-mobile-alt text-success mt-1 me-3"></i>
+                    <div>
+                        <strong>Fully Responsive Design</strong>
+                        <p class="small text-muted mb-0">Perfect display on all devices - mobile, tablet, desktop</p>
+                    </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-bolt text-warning mt-1 me-3"></i>
+                    <div>
+                        <strong>Lightning Fast Performance</strong>
+                        <p class="small text-muted mb-0">Optimized for speed and better Google rankings</p>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start">
+                    <i class="fas fa-tools text-info mt-1 me-3"></i>
+                    <div>
+                        <strong>Zero Cost Setup</strong>
+                        <p class="small text-muted mb-0">Using free tools like WordPress, GitHub Pages, Canva</p>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Client Testimonial -->
+            <div class="client-testimonial bg-light rounded p-3 mb-3">
+                <p class="small text-muted mb-2">
+                    <i class="fas fa-quote-left text-success me-1"></i>
+                    "Got my business website in 3 days without spending a single rupee!"
+                </p>
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-user-circle text-secondary me-2"></i>
+                    <small class="text-muted">- Startup Founder</small>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="quick-stats d-flex justify-content-between text-center mb-3">
+                <div class="stat-item">
+                    <div class="h5 mb-0 text-success">50+</div>
+                    <small class="text-muted">Websites</small>
+                </div>
+                <div class="stat-item">
+                    <div class="h5 mb-0 text-warning">3-5 Days</div>
+                    <small class="text-muted">Delivery</small>
+                </div>
+                <div class="stat-item">
+                    <div class="h5 mb-0 text-info">₹0</div>
+                    <small class="text-muted">Upfront Cost</small>
+                </div>
+            </div>
+
+            <!-- Technology Badges -->
+            <div class="tech-badges mb-3 text-center">
+                <span class="badge bg-success me-1 mb-1">HTML5</span>
+                <span class="badge bg-primary me-1 mb-1">CSS3</span>
+                <span class="badge bg-warning me-1 mb-1">JavaScript</span>
+                <span class="badge bg-info me-1 mb-1">Bootstrap</span>
+                <span class="badge bg-secondary me-1 mb-1">WordPress</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-grid gap-2">
+                <button class="btn btn-success text-white">
+                    <i class="fas fa-eye me-2"></i>View Portfolio
+                </button>
+                <button class="btn btn-outline-success btn-sm">
+                    <i class="fas fa-rocket me-2"></i>Free Website Audit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Project 3 - Premium Power BI Service -->
+<div class="col-md-6 col-lg-4">
+    <div class="card service-card border-0 shadow-lg h-100 hover-lift">
+        <!-- Card Header with Gradient -->
+        <div class="card-header bg-gradient-warning text-white text-center py-3 border-0">
+            <i class="fas fa-chart-line fa-2x mb-2"></i>
+            <h5 class="card-title mb-0">Power BI Specialist</h5>
+        </div>
+
+        <div class="card-body p-4 d-flex flex-column">
+            <!-- Benefits List -->
+            <ul class="list-unstyled mb-4 flex-grow-1">
+                <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-rocket text-warning mt-1 me-3"></i>
+                    <div>
+                        <strong>Transform Data into Insights</strong>
+                        <p class="small text-muted mb-0">Convert your Excel sheets into stunning interactive dashboards</p>
+                    </div>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-sync-alt text-success mt-1 me-3"></i>
+                    <div>
+                        <strong>Automated Reports</strong>
+                        <p class="small text-muted mb-0">Set up automatic data refresh and scheduled reports</p>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start">
+                    <i class="fas fa-mobile-alt text-info mt-1 me-3"></i>
+                    <div>
+                        <strong>Mobile-Friendly</strong>
+                        <p class="small text-muted mb-0">Access your dashboards anywhere on any device</p>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Client Testimonial -->
+            <div class="client-testimonial bg-light rounded p-3 mb-3">
+                <p class="small text-muted mb-2">
+                    <i class="fas fa-quote-left text-warning me-1"></i>
+                    "Our sales tracking became 3x more efficient with these dashboards!"
+                </p>
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-user-circle text-secondary me-2"></i>
+                    <small class="text-muted">- Happy Client</small>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="quick-stats d-flex justify-content-between text-center mb-3">
+                <div class="stat-item">
+                    <div class="h5 mb-0 text-warning">50+</div>
+                    <small class="text-muted">Dashboards</small>
+                </div>
+                <div class="stat-item">
+                    <div class="h5 mb-0 text-success">100%</div>
+                    <small class="text-muted">On Time</small>
+                </div>
+                <div class="stat-item">
+                    <div class="h5 mb-0 text-info">₹0</div>
+                    <small class="text-muted">Upfront Cost</small>
+                </div>
+            </div>
+
+            <!-- Technology Badges -->
+            <div class="tech-badges mb-3 text-center">
+                <span class="badge bg-warning me-1 mb-1">Power BI Pro</span>
+                <span class="badge bg-success me-1 mb-1">DAX Formulas</span>
+                <span class="badge bg-info me-1 mb-1">Data Modeling</span>
+                <span class="badge bg-primary me-1 mb-1">Custom Visuals</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-grid gap-2">
+                <button class="btn btn-warning text-white">
+                    <i class="fas fa-play-circle me-2"></i>See Live Demo
+                </button>
+                <button class="btn btn-outline-warning btn-sm">
+                    <i class="fas fa-download me-2"></i>Download Sample Report
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+
+        <!-- About Section -->
+        <section id="about" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3 class="mb-4">Zero Investment, Maximum Value</h3>
+                        <p class="mb-4">TechStart Solutions was founded with a simple mission: to provide high-quality
+                            IT services to businesses and individuals without requiring any upfront investment.</p>
+                        <p class="mb-4">We leverage free tools, open-source technologies, and innovative approaches to
+                            deliver professional solutions that help our clients grow their businesses.</p>
+                        <p>Our team consists of passionate professionals with expertise in data analysis, web
+                            development, and AI technologies, all committed to delivering exceptional value.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-4">
+                            <h4 class="mb-3">Our Approach</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Zero Cost Setup:</strong> No initial investment required
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Free Tools & Technologies:</strong> Leveraging the best free resources
+                                    available
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Quality Assurance:</strong> Professional results without compromise
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <strong>Ongoing Support:</strong> We're here to help after delivery
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-5">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="contact-info text-center">
+                            <h3 class="mb-4">Contact Information</h3>
+                            <div class="social-links mb-4">
+                                <a href="https://www.instagram.com/sahil_.kumarr?igsh=NGoycGx3NzV6ZXl2"
+                                   title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/sahil-kumar-848392259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                   title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <!--                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>-->
+                                <a href="https://wa.me/919511138822?text=Hello%20TechStart%20Solution,%20I%20need%20your%20services
+" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info.techstartsolution@gmail.com?subject=Inquiry%20for%20TechStart%20Solution&body=Hello%20TechStart%20Solution,%0AI%20want%20to%20know%20more%20about%20your%20services."
+                                   title="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+
+                                <a href="https://github.com/SahilKumarTech" title="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                            <p class="mb-3"><i class="fas fa-envelope me-2"></i>info.techstartsolution@gmail.com</p>
+                            <p class="mb-0">Reach out to us through any of these platforms for inquiries, quotes, or
+                                consultations.</p>
+                        </div>
+
+
+                        <div class="card p-4">
+                            <h4 class="text-center mb-4">Send Us a Message</h4>
+                            <form action="https://formsubmit.co/gautamsahil552004@gmail.com" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Your Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="service" class="form-label">Service Interested In</label>
+                                    <select class="form-select" id="service" name="service" required>
+                                        <option selected disabled>Select a service</option>
+                                        <option value="data-analysis">Data Analysis & Business Insights</option>
+                                        <option value="website-dev">Website Development</option>
+                                        <option value="powerbi">Power BI Freelancer</option>
+                                        <option value="courses">Free Course PDFs</option>
+                                        <option value="ai-automation">AI Automation</option>
+                                        <option value="consultation">Free Consultation</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5"
+                                              required></textarea>
+                                </div>
+
+                                <!-- Hidden fields for Formsubmit -->
+                                <input type="hidden" name="_subject" value="New Contact Form Message!">
+                                <input type="hidden" name="_captcha" value="false">
+                                <!-- Redirect to thank-you page after submission -->
+                                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5>TechStart Solutions</h5>
+                        <p>Providing zero-cost IT solutions to help businesses grow and succeed in the digital age.</p>
+                        <p>We specialize in Data Analysis, Power BI Dashboards, Website Development, AI Automation, and
+                            Digital Services that are tailored to small businesses, startups, and entrepreneurs</p>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#home" class="text-light">Home</a></li>
+                            <li><a href="#services" class="text-light">Services</a></li>
+                            <li><a href="#about" class="text-light">About</a></li>
+                            <li><a href="#contact" class="text-light">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <h5>Connect With Us</h5>
+                        <div class="social-links">
+
+
+                            <a href="https://www.instagram.com/sahil_.kumarr?igsh=NGoycGx3NzV6ZXl2" title="Instagram"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/sahil-kumar-848392259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                               title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/919511138822?text=Hello%20TechStart%20Solution,%20I%20need%20your%20services
+" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="mailto:info.techstartsolution@gmail.com?subject=Inquiry%20for%20TechStart%20Solution&body=Hello%20TechStart%20Solution,%0AI%20want%20to%20know%20more%20about%20your%20services."
+                               title="Email">
+                                <i class="fas fa-envelope"></i></a>
+                                <a href="https://github.com/SahilKumarTech" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="bg-light">
+                <div class="text-center pt-2">
+                    <p>&copy; 2025 TechStart Solutions. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+        </script>
+</body>
+</html>
